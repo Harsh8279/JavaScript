@@ -1,69 +1,76 @@
-// variable declaration in js
+let x = 4;
 
-var x = 2;
-var y = 4;
+let y = 5;
 
-console.log("x is ",x);
+console.log("x : ",x);
 
-var z = x + y;
+console.log("y : ",y);
 
-alert(z);
 
-console.log("Addition is ",z);
+x = y;
 
-var x = 6;      // this is valid in var 
+console.log("x : ",x);
+console.log("y : ",y);
 
-// i.e. for var, we can declare as many times we want
+x = 5;
+y = 8;
 
-var z = x + y;
+let z;
 
-console.log("Addition is ",z);
+z = x + y;
 
-let a = 7;
-let b = 8;
+console.log("Addition ",z);
 
-let c = a + b;
+z = x - y;
 
-// let a = 8;  // Uncaught SyntaxError: Identifier 'a' has already been declared
+console.log("Minus  ",z);
 
-// that means we can not again declared the variable as many times if we use let
 
-// then how can we change the variable value while we are using let?
+z = x * y;
 
-// we can just change the value by naming it 
+console.log("Multiply ",z);
 
-console.log(c);
+z = x / y;
 
-a = 19;
+console.log("Division ",z);
 
-c = a + b;
 
-console.log("changed value is : ",c);
+z = x % y;
 
-// Const 
+console.log("Modulas ",z);
 
-const cnst =  12;
 
-console.log("the value of the constant is :",cnst);
+z +=y;
 
-// if we declare any constant value then after we can not change that value again
+console.log("Z is ",z);
 
-// cnst = 14; // script.js:51 Uncaught TypeError: Assignment to constant variable.
+let num1 = 10;
 
-// naming convention in  js 
+z = num1**2;
 
-// do not start the variable name with digit
-// we can start the variable name by _ and $ 
-// we can't use the reserved keyword
+console.log("num1**2 ",z);
 
-var str = "Hi";
+let str1  = "Hi";
 
-console.log(str);
+console.log(num1+str1);
 
-console.log(typeof str);
+let str2 = "10";
 
-let str1 = "Hi", str2 = "Harsh";
+// convert string to number 
 
-alert(str1);
+console.log("String : ",str2, " type is ",typeof str2);
 
-alert(str2);
+str2 = +str2;
+
+console.log("Number : ",str2, " type is ",typeof str2);
+
+console.log("str2++ ",str2++);
+
+console.log("Number : ",str2);
+
+console.log("++str2 ",++str2);
+
+
+let num = 4 + 5 /5;
+
+console.log(num);
