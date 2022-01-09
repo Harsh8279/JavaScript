@@ -1,76 +1,70 @@
-let x = 4;
+let x = 5;
 
-let y = 5;
-
-console.log("x : ",x);
-
-console.log("y : ",y);
+console.log(x);
 
 
-x = y;
+x = 'hello';
 
-console.log("x : ",x);
-console.log("y : ",y);
+// dynamically data type variable 
 
-x = 5;
-y = 8;
+console.log(x);
 
-let z;
+x = "Hel'lo";
 
-z = x + y;
+console.log(x);
 
-console.log("Addition ",z);
+x = "Hell\"o";
 
-z = x - y;
+console.log(x);
 
-console.log("Minus  ",z);
+x = 34.56;
+
+console.log(x);
+
+x = -34.56;
+
+console.log(x);
+
+console.log("2==2",2==2);
+
+console.log("2==4",2==4);
+
+console.log("2>4",2>4);
+
+console.log("2<4",2<4);
+
+// array
+
+let arr = ["Hi","Hello","Harsh"];
+
+console.log(arr," type is : ",typeof arr);
+
+// object 
+
+let boy = {name: "Harsh",age:21};
+
+console.log(boy, "typeof ",typeof boy);
+
+let n;
+
+console.log(n,typeof n);
+
+n = "";
+
+console.log(n,typeof n);
+
+n = typeof 10;
+
+console.log(n,typeof n);
+
+n = typeof "Harsh";
+
+console.log(n,typeof n);
+
+n = "Harsh";
+
+alert("hello "+n);
+
+alert(`hello ${n}`);
 
 
-z = x * y;
-
-console.log("Multiply ",z);
-
-z = x / y;
-
-console.log("Division ",z);
-
-
-z = x % y;
-
-console.log("Modulas ",z);
-
-
-z +=y;
-
-console.log("Z is ",z);
-
-let num1 = 10;
-
-z = num1**2;
-
-console.log("num1**2 ",z);
-
-let str1  = "Hi";
-
-console.log(num1+str1);
-
-let str2 = "10";
-
-// convert string to number 
-
-console.log("String : ",str2, " type is ",typeof str2);
-
-str2 = +str2;
-
-console.log("Number : ",str2, " type is ",typeof str2);
-
-console.log("str2++ ",str2++);
-
-console.log("Number : ",str2);
-
-console.log("++str2 ",++str2);
-
-
-let num = 4 + 5 /5;
-
-console.log(num);
