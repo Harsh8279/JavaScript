@@ -1,16 +1,19 @@
-let age = 18;
+let isLoggedIn = 1;     // if 0 --> not logged in and if 1 --> logged in 
 
-// let hasVoterIdCard = true;
-let hasVoterIdCard = false;
-
-
-if(age>=18 && hasVoterIdCard){
-    alert("You can vote");
-}
-else if(age>=18 && !hasVoterIdCard)
+/*
+if(isLoggedIn)
 {
-    alert("Please visit for making voter id card!!!");
+    document.write("Log Out");
 }
 else{
-    alert("Sorry!! Not Eligible!!");
+    document.write("Log In")
 }
+*/
+
+// Ternary Operator
+
+// isLoggedIn = 0;
+
+let option = isLoggedIn?"Log Out":"Log in";
+
+document.write(option);
