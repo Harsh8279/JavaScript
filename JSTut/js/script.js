@@ -1,19 +1,9 @@
-let isLoggedIn = 1;     // if 0 --> not logged in and if 1 --> logged in 
+// let user = "Harsh";
+let user;
 
-/*
-if(isLoggedIn)
-{
-    document.write("Log Out");
-}
-else{
-    document.write("Log In")
-}
-*/
+alert(user);
 
-// Ternary Operator
+// while we have value of variable as undefined then we can use 
+// Nullish coalescing operator --> ??
 
-// isLoggedIn = 0;
-
-let option = isLoggedIn?"Log Out":"Log in";
-
-document.write(option);
+alert(user ?? "Guest User");
