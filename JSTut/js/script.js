@@ -1,45 +1,38 @@
-/*
+// data type conversion
 
-    1. alert() --> shows a message 
+let a = 5;
 
-    2. prompt() --> shows a message, input text. It returns text on Ok or, 
-                    if Cancel button or Esc is clicked, null.
+console.log("a ",a, " type of",typeof a);
 
-    3. confirm() --> shows a message, confirm with "ok" or "cancel". It 
-                     returns true for Ok and false for cancel\Esc.
+a = a + null;
 
-*/
+console.log("a",a," type of",typeof a);
 
-// Note :- All these pause script execution and don't allow  the visitor 
-// to interact with the rest of the page until the window has been dismissed.
 
-alert("Welcome !!");
+a = "5"+null;
 
-// let age = prompt("Enter Your Age");
+console.log("a",a," type of",typeof a);
 
-// If we want by default value in text field then 
+a = "5" + 2;
 
-let age = prompt("Enter Your age ",21);
+console.log("a",a," type of",typeof a);
 
-// document.write("Age is ",age, " type is ",typeof age);
+a = 2 + "5";
 
-// document.write(age ?? 'Age is blank');
+console.log("a",a," type of",typeof a);
 
-if(age != null){
-    document.write("Age is ",age, " type is ",typeof age);
-}
-else{
-    document.write("Age is not given by user!!");
-}
+a = 2 - "5";
 
-// confirm
+console.log("a",a," type of",typeof a);
 
-let response = confirm("Do you want to Quit??");
+a = 2 * "5";
 
-if(response){
+console.log("a",a," type of",typeof a);
 
-    document.write("<br>Bbbyee!!");
+a = "5"*"2";
 
-}else{
-    document.write("<br>Welcome Back!!");
-}
+console.log("a",a," type of",typeof a);
+
+a = "5"*"yes";
+
+console.log("a",a," type of",typeof a);
