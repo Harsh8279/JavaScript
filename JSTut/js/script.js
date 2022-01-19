@@ -1,101 +1,163 @@
-/**
- 
-    Number()
-    String()
-    Boolean()
+let pName  = "Swayam";
 
-    + 
+// let sntc = `Hi ${name} Good Morning!!`;     // In a browser, the global name variable has special meaning. 
 
- */
+let sntc = `Hi ${pName} Good Morning!!`;
 
+console.log(sntc);
 
-let a  = 4;
+sntc  = `Hi ${pName}\nGood \tMorning!!`;
 
-console.log("a -->",a," typeof --> ",typeof a);
+console.log(sntc);
 
-a = String(a);
+sntc = "Hi\Harsh How are you???";
 
-console.log("a -->",a," typeof --> ",typeof a);
+console.log(sntc);
 
-a = Boolean(a);
+sntc = "Hi\\Harsh How are you???";
 
-console.log("a -->",a," typeof --> ",typeof a);
+console.log(sntc);
 
-a = 5;
+// sntc = "Hi Harsh"Good Morning"; --> Invaid
 
-console.log("a -->",a," typeof --> ",typeof a);
+sntc = "Hi \"Harsh How are you???";
 
-a = Boolean(a);
+console.log(sntc);
 
-console.log("a -->",a," typeof --> ",typeof a);
+sntc =  'That book is Harsh\'s book ri8??';
 
-a = 0;
+console.log(sntc);
 
-console.log("a -->",a," typeof --> ",typeof a);
+sntc = "Hi\Harsh";
 
-a = Boolean(a);
+console.log(sntc.length);
 
-console.log("a -->",a," typeof --> ",typeof a);
+sntc = "Hi\\Harsh";
+console.log(sntc);
+console.log(sntc.length);
 
-a = "";
+sntc = "Swayam Patel";
 
-console.log("a -->",a," typeof --> ",typeof a);
+console.log("sntc ",sntc);
 
-a = Boolean(a);
+console.log("sntc[4]",sntc[4],"sntc[5]",sntc[5]);
 
-console.log("a -->",a," typeof --> ",typeof a);
+// case sensitive
+sntc = "harsh";
 
-a = "a";
+if("Harsh"==sntc){
+    console.log("Equal");
+}
+else{
+    console.log("Not Equal");
+}
 
-console.log("a -->",a," typeof --> ",typeof a);
+let str1 = "Hi";
 
-a = Boolean(a);
+let str2 = "Swayam";
 
-console.log("a -->",a," typeof --> ",typeof a);
+let str3 = str1.concat(str2);
 
-a = "a";
+console.log(str3);
 
-console.log("a -->",a," typeof --> ",typeof a);
+str3 = str1.concat(" ",str2);
 
-a = Number(a);
+console.log(str3);
 
-console.log("a -->",a," typeof --> ",typeof a);
+sntc = "Hi Swayam Patel Good Morning!!";
 
-a = "1";
+let subSntc = sntc.substring(3,15);
 
-console.log("a -->",a," typeof --> ",typeof a);
+console.log(sntc);
+console.log("sntc.substring(3,15) ",subSntc);
 
-a = Number(a);
+let position = sntc.indexOf("Good");
 
-console.log("a -->",a," typeof --> ",typeof a);
+console.log(sntc);
 
-a = "3";
+console.log("sntc.indexOf(\"Good\")", position);
 
-console.log("a -->",a," typeof --> ",typeof a);
+position = sntc.indexOf("good");
 
-a = + a;
-console.log("a -->",a," typeof --> ",typeof a);
+console.log(sntc);
 
-a ="abcd";
+console.log("sntc.indexOf(\"good\")", position);
 
-console.log("a -->",a," typeof --> ",typeof a);
+position = sntc.indexOf("Good",17); // we can give from which point we want search
 
-a  = + a;
+console.log(sntc);
 
-console.log("a -->",a," typeof --> ",typeof a);
+console.log("sntc.indexOf(\"Good\",17)", position);
 
-a = true;
+position = sntc.indexOf("Good",2); // we can give from which point we want search
 
-console.log("a -->",a," typeof --> ",typeof a);
+console.log(sntc);
 
-a  = Number(a);
+console.log("sntc.indexOf(\"Good\",2)", position);
 
-console.log("a -->",a," typeof --> ",typeof a);
+sntc = "Hi Harsh, How are you? All are good or not?"
 
-a = false;
+position = sntc.indexOf("are");
 
-console.log("a -->",a," typeof --> ",typeof a);
+let lstPosition = sntc.lastIndexOf("are");
 
-a = Number(a);
+console.log(sntc);
 
-console.log("a -->",a," typeof --> ",typeof a);
+console.log("sntc.indexOf(\"are\")",position);
+
+console.log("sntc.lastIndexOf(\"are\")", lstPosition);
+
+sntc = "     Hi Harsh how are you? Where are yoou going now???      ";
+
+let trimmedSntc = sntc.trim();
+console.log("=============================================================");
+console.log(sntc)
+console.log(trimmedSntc);
+console.log("=============================================================");
+trimmedSntc = sntc.trimEnd();
+console.log("=============================================================");
+console.log(sntc)
+console.log(trimmedSntc);
+console.log("=============================================================");
+
+sntc = "Hi Harsh Hw Are you I am FINE NA? ";
+
+let uperSntc = sntc.toUpperCase();
+console.log("=============================================================");
+console.log(sntc)
+console.log(uperSntc);
+console.log("=============================================================");
+
+let lwrSntc = sntc.toLowerCase();
+console.log("=============================================================");
+console.log(sntc)
+console.log(lwrSntc);
+console.log("=============================================================");
+
+let lcllwrSntc = sntc.toLocaleLowerCase();
+console.log("=============================================================");
+console.log(sntc)
+console.log(lcllwrSntc);
+console.log("=============================================================");
+
+let lcluprSntc = sntc.toLocaleUpperCase();
+console.log("=============================================================");
+console.log(sntc)
+console.log(lcluprSntc);
+console.log("=============================================================");
+
+sntc = "Hi Harsh Patel How are You???";
+
+let rplcsntc = sntc.replace("Harsh","Swayam");
+console.log("=============================================================");
+console.log(sntc)
+console.log(rplcsntc);
+console.log("=============================================================");
+
+let incValue  = sntc.includes("Harsh");
+
+console.log("=============================================================");
+console.log(sntc)
+console.log("sntc.includes(\"Harsh\")",incValue);
+console.log("sntc.includes(\"harsh\")",sntc.includes("harsh"));
+console.log("=============================================================");
