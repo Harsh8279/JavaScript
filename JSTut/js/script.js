@@ -9,3 +9,12 @@ function myTables(number){
 let number = + prompt("Enter Number ");
 
 myTables(number);
+
+function doAdd(num1, num2){
+    let sum = num1+num2;
+
+    document.write(`sum is ${sum}`);
+
+}
+
+doAdd(1,2);
