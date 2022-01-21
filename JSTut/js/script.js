@@ -1,16 +1,9 @@
-// Immediately invoked function
+// Immediatly invoked function
 
-let str = "Hiiiii";
+let msg = "Hello my script";
 
-(function (){
+function show(){
+    console.log(msg);
+}
 
-    let str = "Hellllo";
-
-    console.log("Str ",str);
-
-    console.log("Hiii");
-    alert("Harsh!!");
-}) ();      //  immediate invoked function
-
-
-
+show();
