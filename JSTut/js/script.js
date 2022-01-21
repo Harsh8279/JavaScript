@@ -1,29 +1,16 @@
-// Anonymus Function
+// Immediately invoked function
 
-/*
+let str = "Hiiiii";
 
-function (){        // SyntaxError: Function statements require a function name
-    console.log("Hiiiii");
-}
+(function (){
 
-*/
+    let str = "Hellllo";
 
-let fn = function(){
-    console.log("Hiii I am variable function");
-};
+    console.log("Str ",str);
 
-console.log(fn);
+    console.log("Hiii");
+    alert("Harsh!!");
+}) ();      //  immediate invoked function
 
-fn();
 
-setTimeout(fn,3000);    // it calls function after 3sec 
 
-console.log("Hiiiii");
-
-setTimeout(
-    function (){
-        console.log("Hi I have no name and still I am function so I am Anonymus function");
-    },3000
-);
-
-// Note : Javascript not run line by line
