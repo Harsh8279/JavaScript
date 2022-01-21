@@ -1,57 +1,25 @@
-// Returning value from the function
+// Global variable vs Local Variable
 
-function doAdd(a,b){
+let car = "Lamborghini";    // Global variable
 
-    return a + b;
+function doPrint(){
 
+    let car = "Audi";
+    
+    console.log("car is : ",car);
+
+    let a = 25;             // Local variable
+
+    console.log("A is ",a);
+
+    // let car = "BMW";        // ReferenceError: Cannot access 'car' before initialization
+
+    // that means if we want to make our local variable with same name as global variable then 
+    // we have to declare or define at the start of the function 
+
+    console.log("car is ",car);
 }
 
-let sum = doAdd(1,2);
+doPrint();
 
-console.log(sum);
-
-// If we write differnt function definition in one js file then it defines for all that doesn't mean like 
-// for one it work differnt and for other different 
-
-/*
-function doAdd(a,b){
-    let d = a + b;
-    return d;
-}
-*/
-sum = doAdd(1,2);
-
-console.log(sum);
-
-// If we donot return the value then it return undefined
-
-function doNothing(a,b){
-    console.log("Not returning any value");
-}
-
-let a = doNothing(1,2);
-
-console.log(a);
-
-function doComparison(a,b){
-    if(a>b){
-        return 1;
-    }else if(b>a){
-        return -1;
-    }
-    else{
-        return 0;
-    }
-}
-
-let comp = doComparison(1,2);
-
-console.log(comp);
-
-comp = doComparison(2,1);
-
-console.log(comp);
-
-comp = doComparison(4,4);
-
-console.log(comp);
+console.log("car is ",car);
