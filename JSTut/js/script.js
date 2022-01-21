@@ -1,65 +1,57 @@
-function myTables(number){
-    for(let i = 1;i<=10;i++){
-        document.write(`${number} x ${i} = ${number*i}<br>`);
-    }
-}
+// Returning value from the function
 
+function doAdd(a,b){
 
-
-let number = + prompt("Enter Number ");
-
-myTables(number);
-
-function doAdd(num1, num2){
-    let sum = num1+num2;
-
-    document.write(`sum is ${sum}<br>`);
+    return a + b;
 
 }
 
-doAdd(1,2);
+let sum = doAdd(1,2);
 
-doAdd(1,2,3);
+console.log(sum);
 
-function doNothing(){
-    // document.write(`Hiiiiiii Arguments ${arguments} <br>`);
-    console.log(`Hiiiiiii Arguments ${arguments} `);
-    for(let i = 0;i<arguments.length;i++){
-        console.log(arguments[i]);
-    }
-    console.log(arguments);
+// If we write differnt function definition in one js file then it defines for all that doesn't mean like 
+// for one it work differnt and for other different 
+
+/*
+function doAdd(a,b){
+    let d = a + b;
+    return d;
+}
+*/
+sum = doAdd(1,2);
+
+console.log(sum);
+
+// If we donot return the value then it return undefined
+
+function doNothing(a,b){
+    console.log("Not returning any value");
 }
 
-doNothing();
+let a = doNothing(1,2);
 
-doNothing(123);
+console.log(a);
 
-doNothing(123,456);
-
-function doAddition(){
-    if(arguments.length<=0){
-        console.log("No Arguments paassed!!");
+function doComparison(a,b){
+    if(a>b){
+        return 1;
+    }else if(b>a){
+        return -1;
     }
     else{
-        let sum =0;
-        for(let i=0;i<arguments.length;i++){
-            sum = sum + arguments[i];
-        }
-
-        console.log(`Sum is ${sum}`);
+        return 0;
     }
 }
 
-doAddition();
+let comp = doComparison(1,2);
 
-doAddition(1,2,3);
+console.log(comp);
 
-doAddition(4,5,6,7,8);
+comp = doComparison(2,1);
 
-doAddition(123,456,789,123,456,789);
+console.log(comp);
 
-let add = doAddition;
+comp = doComparison(4,4);
 
-add(10,20,30,40,50);
-
-console.log(add);
+console.log(comp);
