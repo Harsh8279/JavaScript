@@ -16,46 +16,46 @@ person = {
 
 };
 
-console.log(person);
+console.log("Person",person);
 
-console.log(typeof person);
+person.sayHello = function (){
+                                console.log("Hello");
+                            };
 
-console.log("person.firstName",person.firstName);
+console.log("Person",person);
 
-console.log("person.['firstName']",person['firstName']);
+person.sayHello();
 
-console.log("person.lastName",person.lastName);
+/* OR */
 
-console.log("person['lastName']",person['lastName']);
-
-console.log("person.age",person.age);
-
-console.log("person['age']",person['age']);
-
-console.log(`person.address ${person.address}`);        // undefined bcz it does not exist
-
-person.city = "Surat";
-
-console.log("person",person);
-
-console.log("person.city ",person.city);
-
-// delete any property of object 
-
-delete person.city;
-
-console.log(person);
-
-// verifying object properties are there in object or not
-
-console.log("'city' in person",'city' in person);
-
-console.log("'age' in person",'age' in person);
-
-// see all properties of objects
-
-for(let i in person){
-    console.log(i);
-    console.log(person[i]);
+function greet(){
+    console.log("Hi Everyone!!");
 }
 
+person.sayHi = greet;
+console.log("Person",person);
+person.sayHi();
+
+/* OR */
+
+person = {
+    firstName   : "Swayam",
+    lastName    : "Patel",
+    sayGoodMorning : function(){console.log("Good Morning!!")}
+}
+
+console.log("Person",person);
+
+person.sayGoodMorning();
+
+/* OR */
+
+person = {
+    firstName   : "Swayam",
+    lastName    : "Patel",
+    sayGoodMorning(){console.log("Good Morning!!")}
+}
+
+console.log("Person",person);
+
+person.sayGoodMorning();
