@@ -1,108 +1,87 @@
 // Math Object and It's Properties
 
-console.log(Math.PI);
+// Generate Random Number in JavaScript
 
-console.log(Math.E);
+let x = Math.random()   // It generates number between 0 and 1
 
-let num = 4.7;
+console.log("x ",x);
 
-console.log("number is ",num);
+console.log("x ",x);
 
-console.log("After Rounding off",Math.round(num));  // for round off our number if <0.5 then take that number
-                                                    // and if >0.5 then take next number from given
+x  = Math.random()*10;
 
-num = 4.2;
+console.log("Math.random()*10",x);
 
-console.log("number is ",num);
+// now we are going to remove the decimal point so we are using trunc
 
-console.log("After Rounding off",Math.round(num));
+x  = Math.trunc(x);
 
-num = 4.5;
+console.log("Math.trunc(Math.random()*10)",x);
 
-console.log("number is ",num);
+// now we want the numbers between 1 to 100
 
-console.log("After Rounding off",Math.round(num));
+x  = Math.random()*100;
 
-num = 4.2;
+console.log("Math.random()*100",x);
 
-console.log("number is ",num);
+x  = Math.trunc(x);
 
-console.log("After Ceil",Math.ceil(num));   // whether the number is >0.5 or < 0.5
-                                            // It takes only next number from given
+console.log("Math.trunc(Math.random()*100)",x);
 
-num = 4.7;
+// now we want the numbers between 1 to 101
 
-console.log("number is ",num);
+x  = Math.random()*101;
 
-console.log("After Ceil",Math.ceil(num));
+console.log("Math.random()*101",x);
 
-num = 4.3;
+x  = Math.trunc(x);
 
-console.log("number is ",num);
+console.log("Math.trunc(Math.random()*101)",x);
 
-console.log("After Floor",Math.floor(num)); // whether the number is >0.5 or < 0.5
-                                            // It takes only given number
+/*
+    Math.random()*101 100.13002620231383
+*/
 
-num = 4.5;
+// now we want the numbers between 1 to 150
 
-console.log("number is ",num);
+x  = Math.random()*150;
 
-console.log("After Floor",Math.floor(num)); 
+console.log("Math.random()*150",x);
 
-num = 4.7;
+x  = Math.trunc(x);
 
-console.log("number is ",num);
+console.log("Math.trunc(Math.random()*150)",x);
 
-console.log("After Floor",Math.floor(num));
+/*
+    Math.random()*150 123.63670013538318
+    Math.trunc(Math.random()*150) 123
+*/
 
-num = 4.7;
+// Now if we want specific range like 
 
-console.log("number is ",num);
+// want range between 15 to 24 --> (Math.random() * (max-min))) + min and we ll get min to max-1 numbers
 
-console.log("After Floor",Math.floor(num)); 
+x  = (Math.random()*(25-15))+15; // Here it will take minimum number but exclude maximum one
 
-// If we want to just remove the decimal point i.e. avoid that point then 
+console.log("Math.random()*(25-15)+15",x);
 
-num = 4.7;
+x  = Math.trunc(x);
 
-console.log("number is ",num);
+console.log("Math.trunc(Math.random()*(25-15))+15",x);
 
-console.log("After Truncate",Math.trunc(num)); 
+// now we will make our function for this logic
 
-num = 4.2;
+function getRandomNumber(mini,maxi){
 
-console.log("number is ",num);
+    // let randomNumber = Math.trunc((Math.random()*(maxi-mini))+mini);     // without max
 
-console.log("After Truncate",Math.trunc(num)); 
+    // if we want to include our maximum number also then use this
 
-// If we want to calculate the power then 
+    let randomNumber = Math.trunc((Math.random()*(maxi-mini + 1))+mini);
 
-let base = 2;
-let exponent = 3;
+    return randomNumber;
+}
 
-console.log(`Base is ${base} and exponent is ${exponent}`);
+x = getRandomNumber(10,13);
 
-console.log("Math.pow(base,exponent)",Math.pow(base,exponent));
-
-base = 100;
-exponent = 1/2;
-
-console.log(`Base is ${base} and exponent is ${exponent}`);
-
-console.log("Math.pow(base,exponent)",Math.pow(base,exponent));
-
-// Or for square root we can use 
-
-num = 100;
-
-console.log("Number is ",num);
-
-console.log("Math.sqrt(num)",Math.sqrt(num));
-
-// getting minimum and maximum function then 
-
-console.log("Math.min(4,5,6,7,8,9)",Math.min(4,5,6,7,8,9));
-
-console.log("Math.max('4',5,6,7,8,9,'10')",Math.max('4',5,6,7,8,9,'10'));
-
-
+console.log("Random Number is ",x);
