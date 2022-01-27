@@ -1,87 +1,191 @@
-// Math Object and It's Properties
+// Date Object in javascript
 
-// Generate Random Number in JavaScript
+let dtOne = 2022-01-27;
 
-let x = Math.random()   // It generates number between 0 and 1
+console.log("dtOne is",dtOne," type is :",typeof dtOne);
 
-console.log("x ",x);
+dtOne = "2022-01-27";
 
-console.log("x ",x);
+console.log("dtOne is",dtOne," type is :",typeof dtOne);
 
-x  = Math.random()*10;
+dtOne = "Jan-27-2022";
 
-console.log("Math.random()*10",x);
+console.log("dtOne is",dtOne," type is :",typeof dtOne);
 
-// now we are going to remove the decimal point so we are using trunc
+dtOne = new Date();
 
-x  = Math.trunc(x);
+console.log("dtOne = new Date(); --> ",dtOne);
 
-console.log("Math.trunc(Math.random()*10)",x);
+console.log("Type is ",typeof dtOne);
 
-// now we want the numbers between 1 to 100
+dtOne = new Date("2022-25-01");     // Invalid
 
-x  = Math.random()*100;
+console.log("dtOne = new Date(); --> ",dtOne);
 
-console.log("Math.random()*100",x);
-
-x  = Math.trunc(x);
-
-console.log("Math.trunc(Math.random()*100)",x);
-
-// now we want the numbers between 1 to 101
-
-x  = Math.random()*101;
-
-console.log("Math.random()*101",x);
-
-x  = Math.trunc(x);
-
-console.log("Math.trunc(Math.random()*101)",x);
+console.log("Type is ",typeof dtOne);
 
 /*
-    Math.random()*101 100.13002620231383
+
+    There are 4 ways to create a new date object:
+
+    new Date()
+    new Date(year, month, day, hours, minutes, seconds, milliseconds)
+    new Date(milliseconds)
+    new Date(date string)
+
 */
-
-// now we want the numbers between 1 to 150
-
-x  = Math.random()*150;
-
-console.log("Math.random()*150",x);
-
-x  = Math.trunc(x);
-
-console.log("Math.trunc(Math.random()*150)",x);
 
 /*
-    Math.random()*150 123.63670013538318
-    Math.trunc(Math.random()*150) 123
+
+    Note: JavaScript counts months from 0 to 11:
+
+    January = 0.
+
+    December = 11.
+
 */
 
-// Now if we want specific range like 
+dtOne = new Date(2022,00,25);
 
-// want range between 15 to 24 --> (Math.random() * (max-min))) + min and we ll get min to max-1 numbers
+console.log("dtOne = new Date(); --> ",dtOne);
 
-x  = (Math.random()*(25-15))+15; // Here it will take minimum number but exclude maximum one
+console.log("Type is ",typeof dtOne);
 
-console.log("Math.random()*(25-15)+15",x);
+dtOne = new Date(2022,00,27,10,03,05,56);
 
-x  = Math.trunc(x);
+console.log("dtOne = new Date(); --> ",dtOne);
 
-console.log("Math.trunc(Math.random()*(25-15))+15",x);
+console.log("Type is ",typeof dtOne);
 
-// now we will make our function for this logic
+dtOne = new Date(2022,25,08);       // Thu Feb 08 2024 
 
-function getRandomNumber(mini,maxi){
+console.log("dtOne = new Date(); --> ",dtOne);
 
-    // let randomNumber = Math.trunc((Math.random()*(maxi-mini))+mini);     // without max
+console.log("Type is ",typeof dtOne);
 
-    // if we want to include our maximum number also then use this
+dtOne = new Date(2022020496);
 
-    let randomNumber = Math.trunc((Math.random()*(maxi-mini + 1))+mini);
+console.log("dtOne = new Date(); --> ",dtOne);
 
-    return randomNumber;
-}
+console.log("Type is ",typeof dtOne);
 
-x = getRandomNumber(10,13);
+dtOne = new Date(99220209);
 
-console.log("Random Number is ",x);
+console.log("dtOne = new Date(); --> ",dtOne);
+
+console.log("Type is ",typeof dtOne);
+
+dtOne = new Date(0);
+
+console.log("dtOne = new Date(); --> ",dtOne);
+
+console.log("Type is ",typeof dtOne);
+
+dtOne = new Date( 1643309935000);
+
+console.log("dtOne = new Date(); --> ",dtOne);
+
+console.log("Type is ",typeof dtOne);
+// One and two digit years will be interpreted as 19xx
+dtOne = new Date(99, 11, 24);
+
+console.log("dtOne = new Date(); --> ",dtOne);
+
+console.log("Type is ",typeof dtOne);
+
+dtOne = new Date(00, 05, 04);
+
+console.log("dtOne = new Date(); --> ",dtOne);
+
+console.log("Type is ",typeof dtOne);
+
+dtOne = new Date(2000, 05, 04);
+
+console.log("dtOne = new Date(); --> ",dtOne);
+
+console.log("Type is ",typeof dtOne);
+
+dtOne = new Date(9, 11, 24);
+
+console.log("dtOne = new Date(); --> ",dtOne);
+
+console.log("Type is ",typeof dtOne);
+
+dtOne = new Date("October 13, 2022 11:13:00");
+
+console.log("dtOne = new Date(); --> ",dtOne);
+
+console.log("Type is ",typeof dtOne);
+
+dtOne = new Date(-100000000000);
+
+console.log("dtOne = new Date(); --> ",dtOne);
+
+console.log("Type is ",typeof dtOne);
+
+// When you display a date object in HTML, it is automatically converted to a string, with the toString() method.
+
+dtOne = new Date(2022, 0, 28);
+
+console.log("dtOne = new Date(); --> ",dtOne);
+
+console.log("Type is ",typeof dtOne);
+
+console.log("dtOne.toString() --> ",dtOne.toString(),"type is ",typeof(dtOne.toString()));
+
+// The toUTCString() method converts a date to a UTC string (a date display standard).
+
+console.log("dtOne.toUTCString() --> ",dtOne.toUTCString(),"type is ",typeof(dtOne.toUTCString()));
+
+console.log("dtOne.toLocaleString() --> ",dtOne.toLocaleString(),"type is ",typeof(dtOne.toLocaleString()));
+
+dtOne  = new Date();
+console.log("dtOne = new Date(); --> ",dtOne);
+console.log("dtOne.valueOf() --> ",dtOne.valueOf(),"type is ",typeof(dtOne.valueOf()));
+
+console.log("dtOne.getTime() -->",dtOne.getTime());
+//The toDateString() method converts a date to a more readable format
+console.log("dtOne.toDateString() --> ",dtOne.toDateString());
+//The toISOString() method converts a Date object to a string, using the ISO standard format
+console.log("dtOne.toISOString() --> ",dtOne.toISOString());
+
+console.log("dtOne.getMonth() --> ",dtOne.getMonth());
+
+/*
+
+Method                      Description
+getFullYear()           Get the year as a four digit number (yyyy)
+getMonth()              Get the month as a number (0-11)
+getDate()               Get the day as a number (1-31)
+getHours()              Get the hour (0-23)
+getMinutes()            Get the minute (0-59)
+getSeconds()            Get the second (0-59)
+getMilliseconds()       Get the millisecond (0-999)
+getTime()               Get time (milliseconds since January 1, 1970)
+getDay()                Get the weekday as a number (0-6)
+Date.now()              Get the time. ECMAScript
+*/
+
+/*
+Method	                    Description
+setDate()	            Set the day as a number (1-31)
+setFullYear()	        Set the year (optionally month and day)
+setHours()	            Set the hour (0-23)
+setMilliseconds()	    Set the milliseconds (0-999)
+setMinutes()	        Set the minutes (0-59)
+setMonth()	            Set the month (0-11)
+setSeconds()	        Set the seconds (0-59)
+setTime()	            Set the time (milliseconds since January 1, 1970)
+*/
+
+dtOne = new Date("Jan 23, 2022");
+
+console.log("dtOne --> ",dtOne);
+
+let dtTwo = new Date();
+
+console.log("dtTwo --> ",dtTwo);
+
+console.log("dtOne>dtTwo --> ",dtOne>dtTwo);
+
+console.log("dtOne<dtTwo --> ",dtOne<dtTwo);
