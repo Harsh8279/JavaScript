@@ -1,36 +1,57 @@
-// JavaScript Accessors (Getters and Setters)   
+// Object Construction function in JavaScript
 
-let person = {
-    name:"Harsh",
-    age:22,
+// we want to make an object 
 
-    // our requirement is to return capitalize name but via object properties not externally
-    // for that We are making one method which will return it and
-    // If we want to return anything from function then 
-    // We are going to name that function starter as get e.g. getAge(),getName()
-    // this is via method of object 
-
-    // getName : function (){
-    //     return this.name.toUpperCase();
-    // },
-    // but we need to call using the Object's properties then we can use set and get
-    get getName(){
-        return this.name.toUpperCase();
-    },
-    // setName : function(name){
-    //     this.name = name;
-    // },
-
-    set setName(name){
-        this.name = name;
-    },
-    
-
+let s1 = {
+    name : "Harsh",
+    age : 22,
+    cls:1
 };
 
-console.log(person.name);
-// console.log(person.getName());
+// and now we want same properties in another object
 
-person.setName = "Swayam";
+let s2 = {
+    name : "Swayam",
+    age : 17,
+    cls:4
+};
 
-console.log(person.getName);
+// so for this requirement we have to make two time object with same properties
+// We can use class also but we can use Object Constructor function
+
+function Student(name,age,cls){
+    this.name = name;
+    this.age = age;
+    this.cls=cls;
+};
+
+s1 = new Student("Harsh",22,4);
+
+s2 = new Student("Swayam",17,1);
+
+console.log("Student 1",s1);
+
+console.log("Student 2",s2);
+// so we can solve that replica using this Object Construction function
+
+// now we are going to add a property in our first object
+
+s1.dept = "Computer";
+
+s2.passingYr = 2021;
+
+console.log("Student 1",s1);
+
+console.log("Student 2",s2);
+
+// so now we can say that we can put differnt properties in differnt objects
+
+// same way we can add method also 
+
+s1.studentDetails = function(){
+    return `Name is ${this.name} age is ${this.age} and class is ${this.cls}`;
+};
+
+console.log(s1.studentDetails());
+
+// If we want common properties then we can also add in our constructor function
