@@ -10,48 +10,30 @@
 <body>
    <ul>
 
-        <li>List 1</li>
+        <li class="cls">List 1</li>
         <!-- Now our requirement is to change this list2 using javaScript   -->
         <!-- so first we are going to giving id to list2 -->
         <li id = "l2">List 2</li>
-        <li>List 3</li>
+        <li class="cls">List 3</li>
 
    </ul>
 
    <script>
 
-        // select an element by id in JavaScript
-
-        /*
-            we have DOM model in HTML and PARENT object is 
-            document and document has method getElementById()
-        */
-
-        let elm = document.getElementById("l2");
+        // select element by class in JavaScript
+        let elm  = document.getElementsByClassName("cls");
 
         console.log(elm);
 
-        /*
-            If we are giving an id which is not inside our HTML
-            then it returns NULL
-        */
+        console.log(elm.length);
 
-        let notElem = document.getElementById("l1");
+        for(let i=0;i<elm.length;i++){
+            console.log(elm[i]);
+            // now we can set other values for these class elements
+            elm[i].innerHTML = "<h3>Hiiii</h3>"
+        }
 
-        console.log(notElem);
-
-        /*
-            If we want to select the content of that selected element 
-            then we can use innerHTML
-        */
-
-        // here we are going to select the elm innerHTML
-
-        console.log("elm.innerHTML -->",elm.innerHTML);
-
-        // now we want to change the innerHTML then
-
-        elm.innerHTML = "<h1>Harsh</h1>";
+        
    </script>
 
 </body>
