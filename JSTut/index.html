@@ -20,46 +20,37 @@
 
     <h2>heading 1</h2>
     <div id="div1">
-        <p>paragraph 1</p>
-        <h2>heading 2</h2>
+        <p class="cls1">paragraph 1</p>
+        <h2 class="cls1">heading 2</h2>
         <p>paragraph 2</p>
         <h2>heading 3</h2>
-        <p>paragraph 3</p>
+        <p class="cls1">paragraph 3</p>
     </div>
 
    <script>
 
-        // select element by Tag in JavaScript
-        let elm  = document.getElementsByTagName("h2");
-
-        console.log(elm);
-
-        console.log(elm.length);
-
-        for(let i=0;i<elm.length;i++){
-            console.log(elm[i]);
-            // now we can set other values for these class elements
-            elm[i].innerHTML = "Hiiii";
-        }
+        // Query Selector in JavaScript
         
-        let divElemByTag = document.getElementsByTagName("div");
+        let x  = document.querySelector("p.cls1");      // now we are going to select only those paragraph tag which have cls1 class.
 
-        console.log(divElemByTag);
-        
-        let divElemById = document.getElementById("div1");
+        console.log(x);     // <p class="cls1">paragraph 1</p>      
+        /*
+            here we got only one paragraph tag instead of all 
+            The reason is querySelector only selects the first one which satisfy the condition
+            so if we want to select all of the elements which satisfy the condition then
+            we need to call 
+                            querySelectorAll() method
+        */
 
-        console.log(divElemById);
+        let y = document.querySelectorAll("p.cls1");
 
-        let h2OfDiv1 = divElemById.getElementsByTagName("h2");
+        console.log(y);
 
-        console.log(h2OfDiv1);
-
-        for(let i = 0;i<h2OfDiv1.length;i++){
-            h2OfDiv1[i].innerHTML = "Insider Hiii";
+        for(let i = 0;i<y.length;i++){
+            y[i].innerHTML = "PCLASS1";
         }
 
 
-        
    </script>
 
 </body>
