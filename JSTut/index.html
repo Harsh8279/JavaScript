@@ -8,7 +8,7 @@
     
 </head>
 <body>
-   <ul>
+    <ul>
 
         <li class="cls">List 1</li>
         <!-- Now our requirement is to change this list2 using javaScript   -->
@@ -16,12 +16,21 @@
         <li id = "l2">List 2</li>
         <li class="cls">List 3</li>
 
-   </ul>
+    </ul>    
+
+    <h2>heading 1</h2>
+    <div id="div1">
+        <p>paragraph 1</p>
+        <h2>heading 2</h2>
+        <p>paragraph 2</p>
+        <h2>heading 3</h2>
+        <p>paragraph 3</p>
+    </div>
 
    <script>
 
-        // select element by class in JavaScript
-        let elm  = document.getElementsByClassName("cls");
+        // select element by Tag in JavaScript
+        let elm  = document.getElementsByTagName("h2");
 
         console.log(elm);
 
@@ -30,8 +39,25 @@
         for(let i=0;i<elm.length;i++){
             console.log(elm[i]);
             // now we can set other values for these class elements
-            elm[i].innerHTML = "<h3>Hiiii</h3>"
+            elm[i].innerHTML = "Hiiii";
         }
+        
+        let divElemByTag = document.getElementsByTagName("div");
+
+        console.log(divElemByTag);
+        
+        let divElemById = document.getElementById("div1");
+
+        console.log(divElemById);
+
+        let h2OfDiv1 = divElemById.getElementsByTagName("h2");
+
+        console.log(h2OfDiv1);
+
+        for(let i = 0;i<h2OfDiv1.length;i++){
+            h2OfDiv1[i].innerHTML = "Insider Hiii";
+        }
+
 
         
    </script>
