@@ -8,48 +8,80 @@
     
 </head>
 <body>
+    
     <ul>
-
-        <li class="cls">List 1</li>
-        <!-- Now our requirement is to change this list2 using javaScript   -->
-        <!-- so first we are going to giving id to list2 -->
-        <li id = "l2">List 2</li>
-        <li class="cls">List 3</li>
-
-    </ul>    
-
-    <h2>heading 1</h2>
-    <div id="div1">
-        <p class="cls1">paragraph 1</p>
-        <h2 class="cls1">heading 2</h2>
-        <p>paragraph 2</p>
-        <h2>heading 3</h2>
-        <p class="cls1">paragraph 3</p>
-    </div>
+        <li id="lst1">list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+        <li>list 4</li>
+    </ul>
+    <ul id="lst">
+        <li>list a</li>
+        <li>list b</li>
+        <li>list c</li>
+        <li>list d</li>
+    </ul>
 
    <script>
 
-        // Query Selector in JavaScript
-        
-        let x  = document.querySelector("p.cls1");      // now we are going to select only those paragraph tag which have cls1 class.
+       // Traversing elements in JavaScript
 
-        console.log(x);     // <p class="cls1">paragraph 1</p>      
-        /*
-            here we got only one paragraph tag instead of all 
-            The reason is querySelector only selects the first one which satisfy the condition
-            so if we want to select all of the elements which satisfy the condition then
-            we need to call 
-                            querySelectorAll() method
-        */
+       /*
+            now we are having id for list1 and from that list1 we are going to 
+            get the parent of that li tag
+       */
 
-        let y = document.querySelectorAll("p.cls1");
+       // first step to get list1
+       let lstElm = document.getElementById("lst1");
 
-        console.log(y);
+       console.log("lstElm -->",lstElm);
 
-        for(let i = 0;i<y.length;i++){
-            y[i].innerHTML = "PCLASS1";
+       // now we are going to get the parent element 
+       let prtElem = lstElm.parentElement;
+
+       console.log("prtElem -->",prtElem);
+
+       // now we are going to change the innerHTML of Parent tag
+
+       prtElem.innerHTML = "Hiii Parent element innerHTML changed!!";
+
+       // now we are going to select the child with the use of parent
+
+       prtElem = document.getElementById("lst");
+
+       console.log("prtElem -->",prtElem);
+        // for first element from child
+       let childElem = prtElem.firstElementChild;
+
+       console.log("childElem -->",childElem);
+
+        // now getting lastElement from child
+
+        childElem = prtElem.lastElementChild;
+        console.log("childElem -->",childElem);
+
+        // now getting all children
+
+        let childrenElems = prtElem.children;
+
+        console.log("childrenElems -->",childrenElems,"type is",typeof childrenElems);
+
+        for(let i=0;i<childrenElems.length;i++){
+            console.log(childrenElems[i]);
+            childrenElems[i].innerHTML = "Swayam";
         }
+        
+        // now we are going to select previous element
 
+        let prvElem = prtElem.previousElementSibling;
+
+        console.log("prvElem --> ",prvElem);
+
+        // now we are going to select Next element
+
+        let nxtElem = prtElem.nextElementSibling;
+
+        console.log("nxtElem --> ",nxtElem);
 
    </script>
 
