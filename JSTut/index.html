@@ -8,80 +8,28 @@
     
 </head>
 <body>
-    
-    <ul>
-        <li id="lst1">list 1</li>
-        <li>list 2</li>
-        <li>list 3</li>
-        <li>list 4</li>
-    </ul>
-    <ul id="lst">
-        <li>list a</li>
-        <li>list b</li>
-        <li>list c</li>
-        <li>list d</li>
-    </ul>
+   
+    <div id="intro">
+        <p>Hello This is JavaScript</p>
+    </div>
 
    <script>
-
-       // Traversing elements in JavaScript
-
-       /*
-            now we are having id for list1 and from that list1 we are going to 
-            get the parent of that li tag
-       */
-
-       // first step to get list1
-       let lstElm = document.getElementById("lst1");
-
-       console.log("lstElm -->",lstElm);
-
-       // now we are going to get the parent element 
-       let prtElem = lstElm.parentElement;
-
-       console.log("prtElem -->",prtElem);
-
-       // now we are going to change the innerHTML of Parent tag
-
-       prtElem.innerHTML = "Hiii Parent element innerHTML changed!!";
-
-       // now we are going to select the child with the use of parent
-
-       prtElem = document.getElementById("lst");
-
-       console.log("prtElem -->",prtElem);
-        // for first element from child
-       let childElem = prtElem.firstElementChild;
-
-       console.log("childElem -->",childElem);
-
-        // now getting lastElement from child
-
-        childElem = prtElem.lastElementChild;
-        console.log("childElem -->",childElem);
-
-        // now getting all children
-
-        let childrenElems = prtElem.children;
-
-        console.log("childrenElems -->",childrenElems,"type is",typeof childrenElems);
-
-        for(let i=0;i<childrenElems.length;i++){
-            console.log(childrenElems[i]);
-            childrenElems[i].innerHTML = "Swayam";
-        }
+        // Manipulation using innerHtml 
+        // Here we are going to change the InnerHTML
         
-        // now we are going to select previous element
+        let divElem = document.getElementById("intro");
 
-        let prvElem = prtElem.previousElementSibling;
+        console.log("divElem -->",divElem);
 
-        console.log("prvElem --> ",prvElem);
+        let htmlInner = divElem.innerHTML;
 
-        // now we are going to select Next element
+        console.log("htmlInner -->",htmlInner);
 
-        let nxtElem = prtElem.nextElementSibling;
+        divElem.innerHTML = "<h1>Hello!!!</h1>";
+        
+        htmlInner = divElem.innerHTML;
 
-        console.log("nxtElem --> ",nxtElem);
+        console.log("htmlInner -->",htmlInner);
 
    </script>
 
