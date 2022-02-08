@@ -1,61 +1,31 @@
-// insert before an element in javaScript
+// remove an element using javaScript
 
-// first getting our parent element
+// first get the parent element
 
-let prtElement  = document.getElementById("ul1");
+let prtElem = document.getElementById("ul1");
 
-console.log(prtElement);
+console.log("Parent Element -->",prtElem);
 
-// now we are going to create an element 
+// now we want to remove the second Element 
+// so first we are going to get that second element
 
-let newLiElm = document.createElement("li");
+let secElemt = prtElem.firstElementChild.nextElementSibling;
 
-newLiElm.innerHTML = "NewlyAdded";
+console.log("Second Element -->",secElemt);
 
-console.log(newLiElm);
+// now we are going to remove the second element
 
-// now I want to add this new element before the 1st element 
+prtElem.removeChild(secElemt);
 
-// then we have to get first element, so let's go
+// deleted second element
 
-let firstElem = prtElement.firstElementChild;
-
-console.log("first Element -->",firstElem);
-
-// so now we can add the element 
-
-prtElement.insertBefore(newLiElm,firstElem);
-
-// now we want to add the new Element before 2nd Element
-
-let secElem = firstElem.nextElementSibling;
-
-console.log("Second Element -->",secElem);
-
-// got it and now we are going to add
-
-prtElement.insertBefore(newLiElm,secElem);
-
-// now we are going to add the element before 3rd Element
-
-let thirdElement = secElem.nextElementSibling;
-
-console.log("Third Element -->",thirdElement);
-
-// got it and now we are going to add
-
-prtElement.insertBefore(newLiElm,thirdElement);
-
-// insertBefore("newElement","before that we want to add element")
-
-// Now I want to add the element before UL and after Body
-
-// then first get Body element
-
-// let bdyElement = document.getElementsByTagName("body");
+// now we want to remove the whole UL then
+// for that we have parent element as a BODY
 
 let bdyElement = document.body;
 
-console.log(bdyElement);
+console.log("Body Element -->",bdyElement);
 
-bdyElement.insertBefore(newLiElm,prtElement);
+bdyElement.removeChild(prtElem);
+
+// UL also deleted...
