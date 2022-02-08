@@ -1,42 +1,26 @@
-// clone or Copy Element in JavaScript
+// replace element using javaScript
 
-// we are going to copy the UL element 
+// here we want to replace 2nd element 
 
-// so first we are going to get that 
+// so getting 2nd element
 
-let ulElemt = document.getElementById("ul1");
+let parentElem = document.getElementById("ul1")
 
-console.log("UL Element -->",ulElemt);
+let secElem = parentElem.firstElementChild.nextElementSibling;
 
-// now we are going to clone our element by cloneNode
+console.log("Second Element -->",secElem);
 
-let cloneElemt = ulElemt.cloneNode(true);
+// newly create element 
 
-console.log(cloneElemt);
+let newLiElem = document.createElement("li");
 
-// here we have passed the TRUE in cloneNode method 
-// because we want to copy the element with it's content --> with it's children
+newLiElem.textContent = "NwElm";
 
-// if we don't want the children then we just remove true 
-// and remain as blank...
+console.log("new Element --> ",newLiElem);
 
-let withOutChildElem = ulElemt.cloneNode();
+parentElem.replaceChild(newLiElem,secElem);
 
-console.log("WIthout Children clone Element --> ",withOutChildElem);
 
-// now we are going to add the cloned element after body
 
-let bdyElement = document.body;
 
-console.log("Body Element -->",bdyElement);
 
-// bdyElement.appendChild(cloneElemt);
-
-// added !!
-
-// but the issue is both element have same id 
-// so solution is change clone Element Id before append
-
-cloneElemt.id = "cloneElement"
-
-bdyElement.appendChild(cloneElemt);
