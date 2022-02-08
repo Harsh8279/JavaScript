@@ -1,78 +1,61 @@
-// Create and Append Element from .js file
-        
-let divElem = document.getElementById("intro");
+// insert before an element in javaScript
 
-console.log("divElem -->",divElem);
+// first getting our parent element
 
-let h1 = document.createElement("h1");
+let prtElement  = document.getElementById("ul1");
 
-console.log(h1);    // Here we have create blank h1 tag
+console.log(prtElement);
 
-let text = document.createTextNode("Hii, This h1 tag");   // this function create Text node 
+// now we are going to create an element 
 
-console.log(text);
+let newLiElm = document.createElement("li");
 
-// now we are going to add this text as a child node of h1
+newLiElm.innerHTML = "NewlyAdded";
 
-h1.appendChild(text);
+console.log(newLiElm);
 
+// now I want to add this new element before the 1st element 
 
-// we can also add text inside element using properties instead of method
+// then we have to get first element, so let's go
 
-//h1.textContent = "Content added";   
+let firstElem = prtElement.firstElementChild;
 
-divElem.appendChild(h1);    // and finally we added our h1 tag with the text node
+console.log("first Element -->",firstElem);
 
-// now we are going to assign class to h1 tag
+// so now we can add the element 
 
-h1.className = "temp";
+prtElement.insertBefore(newLiElm,firstElem);
 
-console.log(h1);
+// now we want to add the new Element before 2nd Element
 
-// if we want to assign more than one class then
+let secElem = firstElem.nextElementSibling;
 
-h1.className = "temp test";
+console.log("Second Element -->",secElem);
 
-console.log(h1);
+// got it and now we are going to add
 
-// now we are going to assign id to the h1 tag
+prtElement.insertBefore(newLiElm,secElem);
 
-h1.id = "intro1";
+// now we are going to add the element before 3rd Element
 
-console.log(h1);
+let thirdElement = secElem.nextElementSibling;
 
-// now we want to add our h1 tag in to the body part then
+console.log("Third Element -->",thirdElement);
 
-let bdyElem = document.body;        // getting body element 
+// got it and now we are going to add
 
-bdyElem.appendChild(h1);
+prtElement.insertBefore(newLiElm,thirdElement);
 
-// now we want to read the textcontent of element
+// insertBefore("newElement","before that we want to add element")
 
-let paraTag = document.getElementById("para");
+// Now I want to add the element before UL and after Body
 
-console.log(paraTag.textContent);
+// then first get Body element
 
-// now we want to add one li tag inside the ul tag
+// let bdyElement = document.getElementsByTagName("body");
 
-let ulElem = document.getElementsByTagName("ul");
+let bdyElement = document.body;
 
-console.log(ulElem);
+console.log(bdyElement);
 
-ulElem = document.getElementById("ul1");
-
-console.log("ulelm -->",ulElem);
-
-// now we are creating li element 
-
-let liElem = document.createElement("li");
-
-console.log(liElem);
-
-// now adding text inside that
-
-liElem.textContent = "Tea";
-
-// now we are going to append the li tag
-
-ulElem.appendChild(liElem);
+bdyElement.insertBefore(newLiElm,prtElement);
