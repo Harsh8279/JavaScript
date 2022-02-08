@@ -1,31 +1,42 @@
-// remove an element using javaScript
+// clone or Copy Element in JavaScript
 
-// first get the parent element
+// we are going to copy the UL element 
 
-let prtElem = document.getElementById("ul1");
+// so first we are going to get that 
 
-console.log("Parent Element -->",prtElem);
+let ulElemt = document.getElementById("ul1");
 
-// now we want to remove the second Element 
-// so first we are going to get that second element
+console.log("UL Element -->",ulElemt);
 
-let secElemt = prtElem.firstElementChild.nextElementSibling;
+// now we are going to clone our element by cloneNode
 
-console.log("Second Element -->",secElemt);
+let cloneElemt = ulElemt.cloneNode(true);
 
-// now we are going to remove the second element
+console.log(cloneElemt);
 
-prtElem.removeChild(secElemt);
+// here we have passed the TRUE in cloneNode method 
+// because we want to copy the element with it's content --> with it's children
 
-// deleted second element
+// if we don't want the children then we just remove true 
+// and remain as blank...
 
-// now we want to remove the whole UL then
-// for that we have parent element as a BODY
+let withOutChildElem = ulElemt.cloneNode();
+
+console.log("WIthout Children clone Element --> ",withOutChildElem);
+
+// now we are going to add the cloned element after body
 
 let bdyElement = document.body;
 
 console.log("Body Element -->",bdyElement);
 
-bdyElement.removeChild(prtElem);
+// bdyElement.appendChild(cloneElemt);
 
-// UL also deleted...
+// added !!
+
+// but the issue is both element have same id 
+// so solution is change clone Element Id before append
+
+cloneElemt.id = "cloneElement"
+
+bdyElement.appendChild(cloneElemt);
