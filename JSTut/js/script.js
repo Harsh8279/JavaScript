@@ -1,26 +1,19 @@
-// replace element using javaScript
+//
 
-// here we want to replace 2nd element 
+// first we are going to find the div tag
 
-// so getting 2nd element
+let divElem = document.getElementById("intro");
 
-let parentElem = document.getElementById("ul1")
+console.log("Div elem -->",divElem);
 
-let secElem = parentElem.firstElementChild.nextElementSibling;
+let item = document.createElement("h1");
 
-console.log("Second Element -->",secElem);
+item.textContent = "Harsh Patel";
 
-// newly create element 
+// divElem.insertAdjacentElement("beforebegin",item);
 
-let newLiElem = document.createElement("li");
+// divElem.insertAdjacentElement("afterbegin",item);
 
-newLiElem.textContent = "NwElm";
+// divElem.insertAdjacentElement("beforeend",item);
 
-console.log("new Element --> ",newLiElem);
-
-parentElem.replaceChild(newLiElem,secElem);
-
-
-
-
-
+divElem.insertAdjacentElement("afterend",item);
