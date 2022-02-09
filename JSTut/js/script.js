@@ -1,4 +1,4 @@
-//
+// insertAdjacentElement in javaScript
 
 // first we are going to find the div tag
 
