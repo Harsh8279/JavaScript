@@ -1,4 +1,4 @@
-// Change/Edit the Attribute of Tag
+// Change/Edit the inline css of Tag
 
 // first we are going to get tag which we want to edit it's attrbute
 
@@ -6,31 +6,21 @@ let btnElem = document.getElementById("btn");
 
 console.log("Button -->",btnElem);
 
-// now we are going to set the class attribute
+// now we are going to change the style 
 
-btnElem.setAttribute("class","SendButton");
+btnElem.style.background = "Red";
+// after
+{/* <button id="btn" style="background: red;">Send</button> */}
 
-// before
-{/* <button id="btn">Send</button> */}
-// after 
-{/* <button id="btn" class="SendButton">Send</button> */}
+// now we are going to change the style using setAttribute
 
-// if we want to get the attribute of the tag then 
+btnElem.setAttribute("style","color:green");
 
-let idOfBtn = btnElem.getAttribute("id");
+{/* <button id="btn" style="color:green">Send</button> */}
 
-console.log("Id -->",idOfBtn);
+// if we want to append the style then
 
-// if we want to remove an attribute then
+btnElem.style.background += "white";
 
-btnElem.removeAttribute("id");
+{/* <button id="btn" style="color: green; background: white;">Send</button> */}
 
-// after removing ID
-
-{/* <button class="SendButton">Send</button> */}
-
-// if we want to check the attribute is there or not then
-
-let isBtnId = btnElem.hasAttribute("id");
-
-console.log("Button has Id or not ?",isBtnId);
