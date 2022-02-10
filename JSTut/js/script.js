@@ -1,19 +1,36 @@
-// insertAdjacentElement in javaScript
+// Change/Edit the Attribute of Tag
 
-// first we are going to find the div tag
+// first we are going to get tag which we want to edit it's attrbute
 
-let divElem = document.getElementById("intro");
+let btnElem = document.getElementById("btn");
 
-console.log("Div elem -->",divElem);
+console.log("Button -->",btnElem);
 
-let item = document.createElement("h1");
+// now we are going to set the class attribute
 
-item.textContent = "Harsh Patel";
+btnElem.setAttribute("class","SendButton");
 
-// divElem.insertAdjacentElement("beforebegin",item);
+// before
+{/* <button id="btn">Send</button> */}
+// after 
+{/* <button id="btn" class="SendButton">Send</button> */}
 
-// divElem.insertAdjacentElement("afterbegin",item);
+// if we want to get the attribute of the tag then 
 
-// divElem.insertAdjacentElement("beforeend",item);
+let idOfBtn = btnElem.getAttribute("id");
 
-divElem.insertAdjacentElement("afterend",item);
+console.log("Id -->",idOfBtn);
+
+// if we want to remove an attribute then
+
+btnElem.removeAttribute("id");
+
+// after removing ID
+
+{/* <button class="SendButton">Send</button> */}
+
+// if we want to check the attribute is there or not then
+
+let isBtnId = btnElem.hasAttribute("id");
+
+console.log("Button has Id or not ?",isBtnId);
