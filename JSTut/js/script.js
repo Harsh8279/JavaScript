@@ -1,21 +1,34 @@
-// getting height and width of specific element using javaScript
+// DOM Events in JavaScript
 
-// getting element 
+function btnClick1(){
+    
+    alert("Hi Harsh Here!!");
+    let bdy = document.body;
+    bdy.className = "dim";
+    console.clear();
+}
 
-let divElem = document.getElementById("box");
+function btnClick2(){
+    console.log("Hi This is Button 2");
+    let bdy = document.body;
+    bdy.className = "color";
+}
 
-let heightOfDiv = divElem.offsetHeight;     // offset means Border+Padding both
+// Register event using EventListener
 
-let widthOfDiv = divElem.offsetWidth;
+// selecting the button
 
-console.log("width -->",widthOfDiv);
+let btn2 = document.getElementById("btn2");
 
-console.log("height -->",heightOfDiv);
+btn2.addEventListener("click",btnClick2);
 
-heightOfDiv = divElem.clientHeight;        // client means No border
 
-widthOfDiv = divElem.clientWidth;
+btn2.addEventListener("mouseover",function(){
+    btn2.style = "color:blue;";
+});
 
-console.log("width -->",widthOfDiv);
+btn2.addEventListener("mouseout",function(){
+    btn2.style = "color:grey;";
+})
 
-console.log("height -->",heightOfDiv);
+
