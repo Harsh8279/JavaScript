@@ -1,34 +1,16 @@
-// DOM Events in JavaScript
+// Remove Event Listener usin JavaScript
+let btn = document.getElementById("btn1");
 
-function btnClick1(){
-    
-    alert("Hi Harsh Here!!");
-    let bdy = document.body;
-    bdy.className = "dim";
-    console.clear();
+function click1(){
+    console.log("Click-1");
 }
 
-function btnClick2(){
-    console.log("Hi This is Button 2");
-    let bdy = document.body;
-    bdy.className = "color";
+
+function click2(){
+    console.log("Click-2");
 }
 
-// Register event using EventListener
+btn.addEventListener("click",click1);
+btn.addEventListener("click",click2);
 
-// selecting the button
-
-let btn2 = document.getElementById("btn2");
-
-btn2.addEventListener("click",btnClick2);
-
-
-btn2.addEventListener("mouseover",function(){
-    btn2.style = "color:blue;";
-});
-
-btn2.addEventListener("mouseout",function(){
-    btn2.style = "color:grey;";
-})
-
-
+btn.removeEventListener('click',click2);
