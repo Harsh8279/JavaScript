@@ -1,61 +1,21 @@
-// change the css classes using JavaScript
+// getting height and width of specific element using javaScript
 
-
-// select the div tag 
+// getting element 
 
 let divElem = document.getElementById("box");
 
-console.log("Div Elem -->",divElem);
+let heightOfDiv = divElem.offsetHeight;     // offset means Border+Padding both
 
-console.log("divElem.className -->",divElem.className);
+let widthOfDiv = divElem.offsetWidth;
 
-// here we are going to append the class 
+console.log("width -->",widthOfDiv);
 
-divElem.className += " dim"; 
-// we have given space before class name, because 
-// if we don't give the space then we got new class name
-// e.g. class-1 --> color ans class-2 --> dim
-// without space class = "colordim"
-// with space  class = "color dim"
+console.log("height -->",heightOfDiv);
 
-console.log("divElem.classList -->",divElem.classList);
+heightOfDiv = divElem.clientHeight;        // client means No border
 
-/*
-DOMTokenList(2) ['color', 'dim', value: 'color dim']
-*/
+widthOfDiv = divElem.clientWidth;
 
-// now we are going to access one by one from classList
+console.log("width -->",widthOfDiv);
 
-for(let i=0;i<divElem.classList.length;i++){
-    
-    console.log(divElem.classList[i]);
-
-}
-
-// or 
-
-for(let i of divElem.classList){
-    console.log(i);
-}
-
-// now we are going to add the class using classList
-
-divElem.classList.add("newClass");
-
-// now we are going to remove the class using classList
-
-divElem.classList.remove("dim");
-
-// now we are going to replace the class using classList
-
-divElem.classList.replace("newClass","dim");
-
-// now we are going to check that element has class has or not
-
-console.log("divElem.classList.contains(\"newClass\") -->",divElem.classList.contains("newClass"));
-
-// now we are going to use the Toggle 
-
-divElem.classList.toggle("dim"); // i.e. if element has a class then going to remove and if not then add that class
-
-
+console.log("height -->",heightOfDiv);
